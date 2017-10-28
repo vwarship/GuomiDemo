@@ -7,5 +7,9 @@
 #include "sm2_ec_key.h"
 #include "util.h"
 #include "sm2_test_param.h"
+#include "part1.h"
+#include "part2.h"
+#include "part3.h"
+#include "part4.h"
 
 #endif

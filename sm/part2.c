@@ -1,25 +1,6 @@
 #include "part2.h"
 #include "sm2_ec_key.h"
 
-typedef struct 
-{
-	BYTE *message;
-	int message_byte_length;
-	BYTE *ID;
-	int ENTL;
-	BYTE k[MAX_POINT_BYTE_LENGTH];  //签名中产生随机数
-	BYTE private_key[MAX_POINT_BYTE_LENGTH];
-	struct 
-	{
-		BYTE x[MAX_POINT_BYTE_LENGTH];
-		BYTE y[MAX_POINT_BYTE_LENGTH];
-	}public_key;
-	BYTE Z[HASH_BYTE_LENGTH];
-	BYTE r[MAX_POINT_BYTE_LENGTH];
-	BYTE s[MAX_POINT_BYTE_LENGTH];
-	BYTE R[MAX_POINT_BYTE_LENGTH];
-} sm2_sign_st;
-
 void sm2_sign(ec_param *ecp, sm2_sign_st *sign)
 {
 	sm2_hash Z_A;

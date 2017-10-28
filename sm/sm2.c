@@ -4,10 +4,6 @@
 */
 
 #include "sm2.h"
-#include "part1.h"
-#include "part2.h"
-#include "part3.h"
-#include "part4.h"
 
 /*
   分为曲线验证，数字签名，密钥交换，加解密

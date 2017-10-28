@@ -1,34 +1,6 @@
 #include "part4.h"
 #include <openssl/rand.h>
 
-typedef struct 
-{
-	BYTE *message;
-	int message_byte_length;
-	//BYTE *encrypt;
-	BYTE *decrypt;
-	int klen_bit;
-
-	BYTE k[MAX_POINT_BYTE_LENGTH];  //ÀÊª˙ ˝
-	BYTE private_key[MAX_POINT_BYTE_LENGTH];
-	struct 
-	{
-		BYTE x[MAX_POINT_BYTE_LENGTH];
-		BYTE y[MAX_POINT_BYTE_LENGTH];
-	}public_key;
-
-	BYTE C[1024];    // C_1 || C_2 || C_3
-	BYTE C_1[1024];
-	BYTE C_2[1024];  //º”√‹∫Ûµƒœ˚œ¢
-	BYTE C_3[1024];
-
-} message_st;
-
-void test(void)
-{
-    printf("test...");
-}
-
 int sm2_encrypt(ec_param *ecp, message_st *message_data)
 {
 	BIGNUM *P_x;
