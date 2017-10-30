@@ -9,19 +9,57 @@
 import UIKit
 
 class SM4ViewController: UIViewController {
+    @IBOutlet weak var keyTextView: UITextView!
+    @IBOutlet weak var inTextView: UITextView!
+    @IBOutlet weak var outTextView: UITextView!
+    
+    var key: String {
+        return keyTextView.text ?? ""
+    }
+    
+    var inText: String {
+        set {
+            inTextView.text = newValue
+        }
+        get {
+            return inTextView.text ?? ""
+        }
+    }
+ 
+    var outText: String {
+        set {
+            outTextView.text = newValue
+        }
+        get {
+            return outTextView.text ?? ""
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func touchEncrypt(_ sender: UIButton) {
+        let inTextLength = inText.lengthOfBytes(using: .utf8)
+        let encryptedTextLen = gm_sm4_calc_encrypte_data_memory_size(inTextLength)
+        let encryptedText = CUString(size: encryptedTextLen)
+        gm_sm4_encrypt(key, inText, inTextLength, encryptedText.toPtr())
+        
+        outText = buffer2Hexstr(buffer: encryptedText.toPtr(), buffer_len: encryptedTextLen)
+    }
+    
+    @IBAction func touchDecrypt(_ sender: UIButton) {
+        let encryptedData = hexstr2Buffer(hexstr: inText)
+        let decryptedText = CUString(size: encryptedData.len)
+        gm_sm4_decrypt(key, encryptedData.buffer.toPtr(), encryptedData.len, decryptedText.toPtr())
 
+        outText = decryptedText.toString()
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -22,7 +22,7 @@ class CharacterConversionToolViewController: UIViewController {
     
     @IBAction func buffer2HexstrButton(_ sender: UIButton) {
         if let inText = inTextView.text {
-            let len = inText.lengthOfBytes(using: .ascii)
+            let len = inText.lengthOfBytes(using: .utf8)
             let hexstr = CString(size: len * 3)
             gm_buffer2hexstr(inText, len, hexstr.toPtr())
             
@@ -32,7 +32,7 @@ class CharacterConversionToolViewController: UIViewController {
     
     @IBAction func hexstr2BufferButton(_ sender: UIButton) {
         if let inText = inTextView.text {
-            let len = inText.lengthOfBytes(using: .ascii)
+            let len = inText.lengthOfBytes(using: .utf8)
             let buffer = CUString(size: len)
             var bufferLength: Int = 0
             let bufferLengthPtr = UnsafeMutablePointer(&bufferLength)

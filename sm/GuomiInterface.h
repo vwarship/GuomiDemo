@@ -11,13 +11,15 @@
 
 #include <stdio.h>
 
-void gm_buffer2hexstr(const unsigned char* buffer, long len, char* hexstr);
-void gm_hexstr2buffer(const char* hexstr, unsigned char* buffer, long* buffer_len);
+void gm_buffer2hexstr(const unsigned char *buffer, long len, char *hexstr);
+void gm_hexstr2buffer(const char *hexstr, unsigned char *buffer, long *buffer_len);
 
-void gm_sm2_encrypt(const char* text, char* encryptedText);
+void gm_sm2_encrypt(const char *text, char *encryptedText);
 
-void gm_md5(const char* str, const size_t str_length, char* md5);
+void gm_md5(const char *str, const size_t str_length, char *md5);
 
-void gm_sms4(void);
+long gm_sm4_calc_encrypte_data_memory_size(long text_len);
+void gm_sm4_encrypt(const char *key, const unsigned char *input, long len, unsigned char *output);
+void gm_sm4_decrypt(const char *key, const unsigned char *input, long len, unsigned char *output);
 
 #endif /* GuomiInterface_h */

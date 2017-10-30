@@ -37,9 +37,6 @@ void gm_hexstr2buffer(const char* hexstr, unsigned char* buffer, long* buffer_le
     }
 }
 
-char *OPENSSL_buf2hexstr(const unsigned char *buffer, long len);
-unsigned char *OPENSSL_hexstr2buf(const char *str, long *len);
-
 void gm_sm2_encrypt(const char* text, char* encryptedText)
 {
     char **sm2_param = sm2_param_recommand;
@@ -112,36 +109,35 @@ void gm_md5(const char* str, const size_t str_length, char* md5)
     }
 }
 
-void gm_sms4(void)
+long gm_sm4_calc_encrypte_data_memory_size(long text_len)
 {
-    const int len = 80;
-    unsigned char key[16] = {0x01,0x23,0x45,0x67,0x89,0xab,0xcd,0xef,0xfe,0xdc,0xba,0x98,0x76,0x54,0x32,0x10};
-//    unsigned char input[16] = {0x01,0x23,0x45,0x67,0x89,0xab,0xcd,0xef,0xfe,0xdc,0xba,0x98,0x76,0x54,0x32,0x10};
-    unsigned char output[len];
-    sm4_context ctx;
-    unsigned long i;
+    if (text_len > 0)
+    {
+        const long m = 16;
+        const long r = text_len % m;
+        const long n = text_len / m;
+        
+        if (r == 0)
+            return n * m;
+        else
+            return (n+1) * m;
+    }
     
-    char* str = "hello123456789012345612345678sdfff";
-    char* input = OPENSSL_buf2hexstr((const unsigned char *)str, strlen(str));
-    for(i=0;i<len;i++)
-        printf("%02x ", input[i]);
-    printf("\n");
-
-
-    //encrypt standard testing vector
-    sm4_setkey_enc(&ctx,key);
-    sm4_crypt_ecb(&ctx,1,len,input,output);
-    for(i=0;i<len;i++)
-        printf("%02x ", output[i]);
-    printf("\n");
-    
-    //decrypt testing
-    sm4_setkey_dec(&ctx,key);
-    sm4_crypt_ecb(&ctx,0,len,output,output);
-    for(i=0;i<len;i++)
-        printf("%02x ", output[i]);
-    printf("\n");
-    
-//    char* sstr = OPENSSL_hexstr2buf(hexstr, 0);
-//    printf("sstr>>%s\n", sstr);
+    return text_len;
 }
+
+void gm_sm4_encrypt(const char *key, const unsigned char *input, long len, unsigned char *output)
+{
+    sm4_context ctx;
+
+    sm4_setkey_enc(&ctx, key);
+    sm4_crypt_ecb(&ctx, 1, len, input, output);
+}
+
+void gm_sm4_decrypt(const char *key, const unsigned char *input, long len, unsigned char *output)
+{
+    sm4_context ctx;
+    sm4_setkey_dec(&ctx, key);
+    sm4_crypt_ecb(&ctx, 0, len, input, output);
+}
+

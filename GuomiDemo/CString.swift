@@ -69,3 +69,23 @@ class CUString {
         return String.init(cString: strPtr)
     }
 }
+
+func buffer2Hexstr(buffer: UnsafeMutablePointer<UInt8>!, buffer_len: Int) -> String {
+    if let buf = buffer {
+        let hexstr = CString(size: buffer_len * 3)
+        gm_buffer2hexstr(buf, buffer_len, hexstr.toPtr())
+        return hexstr.toString()
+    }
+    
+    return ""
+}
+
+func hexstr2Buffer(hexstr: String) -> (buffer: CUString, len: Int) {
+    let len = hexstr.lengthOfBytes(using: .utf8)
+    let buffer = CUString(size: len)
+    var bufferLength: Int = 0
+    let bufferLengthPtr = UnsafeMutablePointer(&bufferLength)
+    gm_hexstr2buffer(hexstr, buffer.toPtr(), bufferLengthPtr)
+
+    return (buffer, bufferLength)
+}

@@ -32,6 +32,7 @@
 		13719E5C1FA18232001A4381 /* xy_ecpoint.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E511FA18231001A4381 /* xy_ecpoint.c */; };
 		13B59F061FA392FE00DCCD9C /* SM4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B59F051FA392FE00DCCD9C /* SM4ViewController.swift */; };
 		13B59F081FA393F600DCCD9C /* CharacterConversionToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B59F071FA393F600DCCD9C /* CharacterConversionToolViewController.swift */; };
+		13B59F0A1FA4AF6000DCCD9C /* SMMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B59F091FA4AF6000DCCD9C /* SMMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		13719E511FA18231001A4381 /* xy_ecpoint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = xy_ecpoint.c; sourceTree = "<group>"; };
 		13B59F051FA392FE00DCCD9C /* SM4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SM4ViewController.swift; sourceTree = "<group>"; };
 		13B59F071FA393F600DCCD9C /* CharacterConversionToolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterConversionToolViewController.swift; sourceTree = "<group>"; };
+		13B59F091FA4AF6000DCCD9C /* SMMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMMenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		135AB32A1FA1558900647374 /* GuomiDemo */ = {
 			isa = PBXGroup;
 			children = (
+				13B59F091FA4AF6000DCCD9C /* SMMenuViewController.swift */,
 				134FD0A51FA2A6D20006EE5F /* SM2ViewController.swift */,
 				135AB32D1FA1558900647374 /* SM3ViewController.swift */,
 				13B59F051FA392FE00DCCD9C /* SM4ViewController.swift */,
@@ -269,6 +272,7 @@
 				134FD0CB1FA3247C0006EE5F /* sm4.c in Sources */,
 				13719E521FA18232001A4381 /* part3.c in Sources */,
 				135AB32C1FA1558900647374 /* AppDelegate.swift in Sources */,
+				13B59F0A1FA4AF6000DCCD9C /* SMMenuViewController.swift in Sources */,
 				13719E5A1FA18232001A4381 /* ec_param.c in Sources */,
 				13719E5C1FA18232001A4381 /* xy_ecpoint.c in Sources */,
 				134FD0A61FA2A6D20006EE5F /* SM2ViewController.swift in Sources */,

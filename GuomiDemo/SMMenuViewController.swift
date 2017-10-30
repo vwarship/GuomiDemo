@@ -1,22 +1,17 @@
 //
-//  SM2ViewController.swift
+//  SMMenuViewController.swift
 //  GuomiDemo
 //
-//  Created by 王军建 on 2017/10/27.
+//  Created by 王军建 on 2017/10/28.
 //  Copyright © 2017年 狗吃草. All rights reserved.
 //
 
 import UIKit
 
-class SM2ViewController: UIViewController {
+class SMMenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let text = "SM2 encrypt test"
-        
-        let encryptedText = CString(size: 10000)
-        gm_sm2_encrypt(text, encryptedText.toPtr())
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,7 +19,6 @@ class SM2ViewController: UIViewController {
     }
     
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -32,6 +26,5 @@ class SM2ViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
 
 }
