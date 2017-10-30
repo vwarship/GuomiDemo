@@ -93,7 +93,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8hd-MC-b3p">
                                                 <rect key="frame" x="0.0" y="80" width="356" height="309"/>
                                                 <subviews>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="abc" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ekg-Hj-2iy">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="sm4 test" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ekg-Hj-2iy">
                                                         <rect key="frame" x="0.0" y="0.0" width="356" height="154.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -272,18 +272,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="97U-ru-5NN">
-                                <rect key="frame" x="93" y="251.5" width="190" height="164"/>
+                                <rect key="frame" x="78.5" y="222.5" width="219" height="222"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7D-g7-MNk">
-                                        <rect key="frame" x="0.0" y="0.0" width="190" height="48"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="219" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="非对称算法 SM2"/>
+                                        <connections>
+                                            <segue destination="jUZ-u2-VIW" kind="showDetail" id="lxN-Ah-gy4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UGV-1C-IbU">
+                                        <rect key="frame" x="0.0" y="58" width="219" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="杂凑算法 SM3"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="showDetail" id="ywE-3f-B08"/>
+                                            <segue destination="BYZ-38-t0r" kind="showDetail" id="14M-Sp-LMC"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tg2-3p-9FL">
-                                        <rect key="frame" x="0.0" y="58" width="190" height="48"/>
+                                        <rect key="frame" x="0.0" y="116" width="219" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="分组算法 SM4"/>
                                         <connections>
@@ -291,7 +299,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySU-QS-wlp">
-                                        <rect key="frame" x="0.0" y="116" width="190" height="48"/>
+                                        <rect key="frame" x="0.0" y="174" width="219" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="字符转换工具"/>
                                         <connections>
