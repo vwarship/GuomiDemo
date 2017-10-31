@@ -256,7 +256,6 @@
                 <splitViewController id="dDm-DV-xAg" sceneMemberID="viewController">
                     <connections>
                         <segue destination="Gaa-UY-2ed" kind="relationship" relationship="masterViewController" id="hYJ-Ax-Ylk"/>
-                        <segue destination="i9e-Jj-VrJ" kind="relationship" relationship="detailViewController" id="49s-sd-4JW"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7jc-Kc-VaD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -279,7 +278,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="非对称算法 SM2"/>
                                         <connections>
-                                            <segue destination="jUZ-u2-VIW" kind="showDetail" id="lxN-Ah-gy4"/>
+                                            <segue destination="jUZ-u2-VIW" kind="showDetail" identifier="sm2" id="lxN-Ah-gy4"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UGV-1C-IbU">
@@ -287,7 +286,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="杂凑算法 SM3"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="showDetail" id="14M-Sp-LMC"/>
+                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="sm3" id="14M-Sp-LMC"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tg2-3p-9FL">
@@ -295,7 +294,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="分组算法 SM4"/>
                                         <connections>
-                                            <segue destination="MKi-1x-YGG" kind="showDetail" id="GuR-Vw-qex"/>
+                                            <segue destination="MKi-1x-YGG" kind="showDetail" identifier="sm4" id="GuR-Vw-qex"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySU-QS-wlp">
@@ -303,7 +302,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="字符转换工具"/>
                                         <connections>
-                                            <segue destination="pX9-gL-M06" kind="showDetail" id="3aq-43-bRm"/>
+                                            <segue destination="pX9-gL-M06" kind="showDetail" identifier="util" id="3aq-43-bRm"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -323,27 +322,21 @@
             <point key="canvasLocation" x="2416.8000000000002" y="-829.83508245877067"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="teY-lW-TBq">
-            <objects>
-                <viewController id="i9e-Jj-VrJ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="EXw-z3-KTQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="Pyx-1k-EUV"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xbp-Kw-NNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="382" y="56"/>
-        </scene>
-        <!--View Controller-->
         <scene sceneID="WGH-yM-AUL">
             <objects>
                 <viewController id="jUZ-u2-VIW" customClass="SM2ViewController" customModule="GuomiDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gck-hi-oIq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="sm2 test" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Uu6-23-f28">
+                                <rect key="frame" x="9" y="20" width="356" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="KoA-Of-wvJ"/>
                     </view>

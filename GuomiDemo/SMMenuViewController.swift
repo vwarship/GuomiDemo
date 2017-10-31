@@ -12,6 +12,7 @@ class SMMenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.performSegue(withIdentifier: "sm2", sender: self)  //当横屏的时候进行选择
     }
 
     override func didReceiveMemoryWarning() {
