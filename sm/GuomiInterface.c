@@ -80,26 +80,13 @@ void gm_sm2_encrypt(const char* text, char* encryptedText)
     ec_param_free(ecp);
 }
 
-void gm_md5(const char* str, const size_t str_length, char* md5)
+void gm_md5(const unsigned char* buffer, const size_t buffer_length, char* md5)
 {
     DWORD hash[8] = {0};
-    
-    char* hexstr = OPENSSL_buf2hexstr((const unsigned char *)str, str_length);
-    if (!hexstr)
-        return;
-    
-    unsigned char* bin_str = OPENSSL_hexstr2buf(hexstr, 0);
-    
-    free(hexstr);
-    
-    if (!bin_str)
-        return;
-    
+
     SM3_Init();
-    SM3_Update((BYTE *)bin_str, (DWORD)str_length);
+    SM3_Update((BYTE *)buffer, (DWORD)buffer_length);
     SM3_Final(hash);
-    
-    free(bin_str);
     
     for (DWORD i = 0; i < sizeof(hash)/sizeof(DWORD); i++)
     {

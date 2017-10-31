@@ -16,7 +16,7 @@ void gm_hexstr2buffer(const char *hexstr, unsigned char *buffer, long *buffer_le
 
 void gm_sm2_encrypt(const char *text, char *encryptedText);
 
-void gm_md5(const char *str, const size_t str_length, char *md5);
+void gm_md5(const unsigned char *buffer, const size_t buffer_length, char *md5);
 
 long gm_sm4_calc_encrypte_data_memory_size(long text_len);
 void gm_sm4_encrypt(const char *key, const unsigned char *input, long len, unsigned char *output);
