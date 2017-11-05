@@ -14,12 +14,14 @@
 void gm_buffer2hexstr(const unsigned char *buffer, long len, char *hexstr);
 void gm_hexstr2buffer(const char *hexstr, unsigned char *buffer, long *buffer_len);
 
-void gm_sm2_generate_keys(char *public_key, char *private_key);
+void gm_generate_random(char *random_num);
+
+void gm_sm2_generate_keys(const char *random_num, char *public_key, char *private_key);
 void gm_sm2_encrypt(const char *text, char *encryptedText);
 
 void gm_md5(const unsigned char *buffer, const size_t buffer_length, char *md5);
 
-long gm_sm4_calc_encrypte_data_memory_size(long text_len);
+long gm_sm4_calc_encrypted_data_memory_size(long data_len);
 void gm_sm4_encrypt(const char *key, const unsigned char *input, long len, unsigned char *output);
 void gm_sm4_decrypt(const char *key, const unsigned char *input, long len, unsigned char *output);
 

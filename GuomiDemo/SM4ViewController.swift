@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SM4ViewController: UIViewController {
+class SM4ViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var keyTextView: UITextView!
     @IBOutlet weak var inTextView: UITextView!
     @IBOutlet weak var outTextView: UITextView!
@@ -37,6 +37,14 @@ class SM4ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        keyTextView.returnKeyType = .done
+        inTextView.returnKeyType = .done
+        outTextView.returnKeyType = .done
+        
+        keyTextView.delegate = self
+        inTextView.delegate = self
+        outTextView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +53,7 @@ class SM4ViewController: UIViewController {
     
     @IBAction func touchEncrypt(_ sender: UIButton) {
         let inTextLength = inText.lengthOfBytes(using: .utf8)
-        let encryptedTextLen = gm_sm4_calc_encrypte_data_memory_size(inTextLength)
+        let encryptedTextLen = gm_sm4_calc_encrypted_data_memory_size(inTextLength)
         let encryptedText = CUString(size: encryptedTextLen)
         gm_sm4_encrypt(key, inText, inTextLength, encryptedText.toPtr())
         
@@ -58,6 +66,15 @@ class SM4ViewController: UIViewController {
         gm_sm4_decrypt(key, encryptedData.buffer.toPtr(), encryptedData.len, decryptedText.toPtr())
 
         outText = decryptedText.toString()
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return true
+        }
+        
+        return true
     }
     
     /*

@@ -8,12 +8,18 @@
 
 import UIKit
 
-class CharacterConversionToolViewController: UIViewController {
+class CharacterConversionToolViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var inTextView: UITextView!
     @IBOutlet weak var outTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        inTextView.returnKeyType = .done
+        outTextView.returnKeyType = .done
+        
+        inTextView.delegate = self
+        outTextView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,6 +56,15 @@ class CharacterConversionToolViewController: UIViewController {
         outTextView.text = inText
     }
     
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return true
+        }
+        
+        return true
+    }
+
     /*
     // MARK: - Navigation
 

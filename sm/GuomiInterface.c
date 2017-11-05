@@ -37,6 +37,32 @@ void gm_hexstr2buffer(const char* hexstr, unsigned char* buffer, long* buffer_le
     }
 }
 
+void gm_generate_random(char *random_num)
+{
+    strcpy(random_num, "4C62EEFD6ECFC2B95B92FD6C3D9575148AFA17425546D49018E5388D49DD7B4F");
+}
+
+void gm_sm2_generate_keys(const char *random_num, char *public_key, char *private_key)
+{
+    char **sm2_param = sm2_param_recommand;
+    int type = TYPE_GFp;
+    int point_bit_length = 256;
+
+    ec_param *ecp;
+    sm2_ec_key *key_B;
+    message_st message_data;
+    
+    strcpy(private_key, "00000000008f8b37dc19d95550fd06c1cacd43fe165f80e3b80242f0c66a733");
+    
+    ecp = ec_param_new();
+    ec_param_init(ecp, sm2_param, type, point_bit_length);
+    key_B = sm2_ec_key_new(ecp);
+    
+    sm2_ec_key_init(key_B, private_key, ecp);
+    
+    sprintf(public_key, "%s\n%s", key_B->P->x, key_B->P->y);
+}
+
 void gm_sm2_encrypt(const char* text, char* encryptedText)
 {
     char **sm2_param = sm2_param_recommand;
@@ -136,13 +162,13 @@ void gm_md5(const unsigned char* buffer, const size_t buffer_length, char* md5)
     }
 }
 
-long gm_sm4_calc_encrypte_data_memory_size(long text_len)
+long gm_sm4_calc_encrypted_data_memory_size(long data_len)
 {
-    if (text_len > 0)
+    if (data_len > 0)
     {
         const long m = 16;
-        const long r = text_len % m;
-        const long n = text_len / m;
+        const long r = data_len % m;
+        const long n = data_len / m;
         
         if (r == 0)
             return n * m;
@@ -150,7 +176,7 @@ long gm_sm4_calc_encrypte_data_memory_size(long text_len)
             return (n+1) * m;
     }
     
-    return text_len;
+    return data_len;
 }
 
 void gm_sm4_encrypt(const char *key, const unsigned char *input, long len, unsigned char *output)
