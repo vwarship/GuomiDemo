@@ -13,10 +13,21 @@ class SM2ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let random = CString(size: 100)
+        gm_generate_random(random.toPtr())
+        print("random: \(random.toString())")
+        
         let text = "SM2 encrypt test"
         
-        let encryptedText = CString(size: 10000)
-        gm_sm2_encrypt(text, encryptedText.toPtr())
+        let publicKey = CString(size: 1000)
+        let privateKey = CString(size: 1000)
+        gm_sm2_generate_keys(random.toPtr(), publicKey.toPtr(), privateKey.toPtr())
+        print("publicKey: \(publicKey.toString())")
+        print("privateKey: \(privateKey.toString())")
+
+        let encryptedText = CUString(size: 10000)
+        gm_sm2_encrypt(publicKey.toPtr(), text, encryptedText.toPtr())
+        print(encryptedText.toString())
     }
 
     override func didReceiveMemoryWarning() {

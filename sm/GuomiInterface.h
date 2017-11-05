@@ -17,7 +17,8 @@ void gm_hexstr2buffer(const char *hexstr, unsigned char *buffer, long *buffer_le
 void gm_generate_random(char *random_num);
 
 void gm_sm2_generate_keys(const char *random_num, char *public_key, char *private_key);
-void gm_sm2_encrypt(const char *text, char *encryptedText);
+void gm_sm2_encrypt(const char *public_key, const unsigned char *text, char unsigned *encryptedText);
+void gm_sm2_decrypt(const char *private_key, const unsigned char *encryptedText, char unsigned *text);
 
 void gm_md5(const unsigned char *buffer, const size_t buffer_length, char *md5);
 
