@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		134FD0A41FA1B9900006EE5F /* GuomiInterface.c in Sources */ = {isa = PBXBuildFile; fileRef = 134FD0A21FA1B9900006EE5F /* GuomiInterface.c */; };
+		134FD0A41FA1B9900006EE5F /* GuomiInterface.c in Sources */ = {isa = PBXBuildFile; fileRef = 134FD0A21FA1B9900006EE5F /* GuomiInterface.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		134FD0A61FA2A6D20006EE5F /* SM2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134FD0A51FA2A6D20006EE5F /* SM2ViewController.swift */; };
 		134FD0A81FA2FD310006EE5F /* CString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134FD0A71FA2FD310006EE5F /* CString.swift */; };
-		134FD0C91FA3247C0006EE5F /* sm4test.c in Sources */ = {isa = PBXBuildFile; fileRef = 134FD0C51FA3247B0006EE5F /* sm4test.c */; };
-		134FD0CB1FA3247C0006EE5F /* sm4.c in Sources */ = {isa = PBXBuildFile; fileRef = 134FD0C81FA3247C0006EE5F /* sm4.c */; };
+		134FD0C91FA3247C0006EE5F /* sm4test.c in Sources */ = {isa = PBXBuildFile; fileRef = 134FD0C51FA3247B0006EE5F /* sm4test.c */; settings = {COMPILER_FLAGS = "-w"; }; };
+		134FD0CB1FA3247C0006EE5F /* sm4.c in Sources */ = {isa = PBXBuildFile; fileRef = 134FD0C81FA3247C0006EE5F /* sm4.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		135AB32C1FA1558900647374 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135AB32B1FA1558900647374 /* AppDelegate.swift */; };
 		135AB32E1FA1558900647374 /* SM3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135AB32D1FA1558900647374 /* SM3ViewController.swift */; };
 		135AB3311FA1558900647374 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 135AB32F1FA1558900647374 /* Main.storyboard */; };
@@ -19,17 +19,17 @@
 		135AB3361FA1558900647374 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 135AB3341FA1558900647374 /* LaunchScreen.storyboard */; };
 		135AB3431FA1562400647374 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 135AB3411FA1562400647374 /* libssl.a */; };
 		135AB3441FA1562400647374 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 135AB3421FA1562400647374 /* libcrypto.a */; };
-		13719E521FA18232001A4381 /* part3.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E3D1FA1822E001A4381 /* part3.c */; };
-		13719E531FA18232001A4381 /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E3F1FA1822E001A4381 /* util.c */; };
-		13719E541FA18232001A4381 /* part1.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E401FA1822E001A4381 /* part1.c */; };
-		13719E551FA18232001A4381 /* part2.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E421FA1822E001A4381 /* part2.c */; };
-		13719E561FA18232001A4381 /* sm3.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E481FA18230001A4381 /* sm3.c */; };
-		13719E571FA18232001A4381 /* sm2_ec_key.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E491FA18230001A4381 /* sm2_ec_key.c */; };
-		13719E581FA18232001A4381 /* sm2.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E4A1FA18230001A4381 /* sm2.c */; };
-		13719E591FA18232001A4381 /* part4.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E4B1FA18230001A4381 /* part4.c */; };
-		13719E5A1FA18232001A4381 /* ec_param.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E4D1FA18231001A4381 /* ec_param.c */; };
-		13719E5B1FA18232001A4381 /* sm2_test_param.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E4E1FA18231001A4381 /* sm2_test_param.c */; };
-		13719E5C1FA18232001A4381 /* xy_ecpoint.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E511FA18231001A4381 /* xy_ecpoint.c */; };
+		13719E521FA18232001A4381 /* part3.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E3D1FA1822E001A4381 /* part3.c */; settings = {COMPILER_FLAGS = "-w"; }; };
+		13719E531FA18232001A4381 /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E3F1FA1822E001A4381 /* util.c */; settings = {COMPILER_FLAGS = "-w"; }; };
+		13719E541FA18232001A4381 /* part1.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E401FA1822E001A4381 /* part1.c */; settings = {COMPILER_FLAGS = "-w"; }; };
+		13719E551FA18232001A4381 /* part2.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E421FA1822E001A4381 /* part2.c */; settings = {COMPILER_FLAGS = "-w"; }; };
+		13719E561FA18232001A4381 /* sm3.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E481FA18230001A4381 /* sm3.c */; settings = {COMPILER_FLAGS = "-w"; }; };
+		13719E571FA18232001A4381 /* sm2_ec_key.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E491FA18230001A4381 /* sm2_ec_key.c */; settings = {COMPILER_FLAGS = "-w"; }; };
+		13719E581FA18232001A4381 /* sm2.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E4A1FA18230001A4381 /* sm2.c */; settings = {COMPILER_FLAGS = "-w"; }; };
+		13719E591FA18232001A4381 /* part4.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E4B1FA18230001A4381 /* part4.c */; settings = {COMPILER_FLAGS = "-w"; }; };
+		13719E5A1FA18232001A4381 /* ec_param.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E4D1FA18231001A4381 /* ec_param.c */; settings = {COMPILER_FLAGS = "-w"; }; };
+		13719E5B1FA18232001A4381 /* sm2_test_param.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E4E1FA18231001A4381 /* sm2_test_param.c */; settings = {COMPILER_FLAGS = "-w"; }; };
+		13719E5C1FA18232001A4381 /* xy_ecpoint.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E511FA18231001A4381 /* xy_ecpoint.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		13B59F061FA392FE00DCCD9C /* SM4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B59F051FA392FE00DCCD9C /* SM4ViewController.swift */; };
 		13B59F081FA393F600DCCD9C /* CharacterConversionToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B59F071FA393F600DCCD9C /* CharacterConversionToolViewController.swift */; };
 		13B59F0A1FA4AF6000DCCD9C /* SMMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B59F091FA4AF6000DCCD9C /* SMMenuViewController.swift */; };
