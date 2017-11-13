@@ -17,8 +17,9 @@ class SM2ViewController: UIViewController {
         gm_generate_random(random.toPtr())
         print("random: \(random.toString())")
         
-        let text = "SM2 encrypt test"
-        
+//        let text = "SM2 encrypt test"
+        let text = "123456"
+
         let publicKey = CString(size: 1000)
         let privateKey = CString(size: 1000)
         gm_sm2_generate_keys(random.toPtr(), publicKey.toPtr(), privateKey.toPtr())
@@ -26,8 +27,11 @@ class SM2ViewController: UIViewController {
         print("privateKey: \(privateKey.toString())")
 
         let encryptedText = CUString(size: 10000)
-        gm_sm2_encrypt(publicKey.toPtr(), text, encryptedText.toPtr())
-        print(encryptedText.toString())
+        gm_sm2_encrypt(publicKey.toPtr(), text, text.count, encryptedText.toPtr())
+        
+        let decryptedText = CUString(size: 10000)
+        gm_sm2_decrypt(privateKey.toPtr(), encryptedText.toPtr(), 1024, decryptedText.toPtr())
+        print("decryptedText: \(decryptedText.toString())")
     }
 
     override func didReceiveMemoryWarning() {

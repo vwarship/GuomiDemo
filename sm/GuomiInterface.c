@@ -13,6 +13,7 @@
 #include "sm3.h"
 #include "sm4.h"
 #include "util.h"
+#include "part4.h"
 
 void gm_buffer2hexstr(const unsigned char* buffer, long len, char* hexstr)
 {
@@ -69,22 +70,25 @@ void gm_sm2_generate_keys(const char *random_num, char *public_key, char *privat
     OPENSSL_free(y);
 }
 
-void gm_sm2_encrypt(const char *public_key, const unsigned char *text, char unsigned *encryptedText)
+static char **sm2_param = sm2_param_recommand;
+static int sm2_type = TYPE_GFp;
+static int sm2_point_bit_length = 256;
+
+void gm_sm2_encrypt(const char *public_key, const unsigned char *text, long text_length, char unsigned *encrypted_text)
 {
     if (!public_key)
         return;
-    
-    char **sm2_param = sm2_param_recommand;
-    int type = TYPE_GFp;
-    int point_bit_length = 256;
-    
+
+    const int public_key_buf_len = 1024;
+    if (public_key_buf_len <= strlen(public_key))
+        return;
+
     ec_param *ecp;
-//    sm2_ec_key *key_B;
     message_st message_data;
-    
-    char public_key_buf[1000] = {'\0'};
+
+    char public_key_buf[public_key_buf_len] = {'\0'};
     strcpy(public_key_buf, public_key);
-    
+
     char *x = public_key_buf;
     char *y = NULL;
     for (int i=0; i<strlen(public_key); ++i)
@@ -95,92 +99,73 @@ void gm_sm2_encrypt(const char *public_key, const unsigned char *text, char unsi
             y = x + i + 1;
         }
     }
-    
+
     BIGNUM *bn_x = BN_new();
     BIGNUM *bn_y = BN_new();
     BN_hex2bn(&bn_x, x);
     BN_hex2bn(&bn_y, y);
 
     ecp = ec_param_new();
-    ec_param_init(ecp, sm2_param, type, point_bit_length);
-//    key_B = sm2_ec_key_new(ecp);
-
-//    //用私钥和随机数导出一个公钥，实际应用时没有私钥，也就是没有这行代码，直接设置下面的公钥
-//    sm2_ec_key_init(key_B, sm2_param_d_B[ecp->type], ecp);//把中间的值给key_b的b
-//    //sm2_param_d_B[ecp->type] 测试自定义的私钥，key_B->P->x和key_B->P->y公钥
+    ec_param_init(ecp, sm2_param, sm2_type, sm2_point_bit_length);
 
     memset(&message_data, 0, sizeof(message_data));
-    //设置明文 这里输入一个字符串 如果输入char[]需要稍微改动
+
     message_data.message = (BYTE*)text;
-    
-    message_data.message_byte_length = (int)strlen((char *)message_data.message);
+    message_data.message_byte_length = text_length;
     message_data.klen_bit = message_data.message_byte_length * 8;
-    
-    //随机数 拷贝到message_data.k,实际使用时应该随机生成这个数
-    sm2_hex2bin((BYTE *)sm2_param_k[ecp->type], message_data.k, ecp->point_byte_length);
-    
+
+//    //随机数 拷贝到message_data.k,实际使用时应该随机生成这个数
+//    sm2_hex2bin((BYTE *)sm2_param_k[ecp->type], message_data.k, ecp->point_byte_length);
+
     //设置公钥 公钥PB =(xB ,yB ): 坐标xB
     sm2_bn2bin(bn_x, message_data.public_key.x, ecp->point_byte_length);
-    sm2_bn2bin(bn_x, message_data.public_key.y, ecp->point_byte_length);
-    
+    sm2_bn2bin(bn_y, message_data.public_key.y, ecp->point_byte_length);
+
     BN_clear_free(bn_x);
     BN_clear_free(bn_y);
 
     //加密
     sm2_encrypt(ecp, &message_data);
-    memcpy(encryptedText, message_data.C, sizeof(message_data.C));
-    
-    printf(">>%s$$\n", encryptedText);
-    
-//    sm2_ec_key_free(key_B);
     ec_param_free(ecp);
-//    char **sm2_param = sm2_param_recommand;
-//    int type = TYPE_GFp;
-//    int point_bit_length = 256;
-//
-//    ec_param *ecp;
-//    sm2_ec_key *key_B;
-//    message_st message_data;
-//
-//    ecp = ec_param_new();
-//    ec_param_init(ecp, sm2_param, type, point_bit_length);
-//    key_B = sm2_ec_key_new(ecp);
-//
-//    //用私钥和随机数导出一个公钥，实际应用时没有私钥，也就是没有这行代码，直接设置下面的公钥
-//    sm2_ec_key_init(key_B, sm2_param_d_B[ecp->type], ecp);//把中间的值给key_b的b
-//
-//    memset(&message_data, 0, sizeof(message_data));
-//    //设置明文 这里输入一个字符串 如果输入char[]需要稍微改动
-//    message_data.message = (BYTE*)text;
-//
-//    message_data.message_byte_length = (int)strlen((char *)message_data.message);
-//    message_data.klen_bit = message_data.message_byte_length * 8;
-//
-//    //随机数 拷贝到message_data.k,实际使用时应该随机生成这个数
-//    sm2_hex2bin((BYTE *)sm2_param_k[ecp->type], message_data.k, ecp->point_byte_length);
-//
-//    //设置公钥
-//    sm2_bn2bin(key_B->P->x, message_data.public_key.x, ecp->point_byte_length);
-//    sm2_bn2bin(key_B->P->y, message_data.public_key.y, ecp->point_byte_length);
-//    DEFINE_SHOW_BIGNUM(key_B->P->x);//公钥PB =(xB ,yB ): 坐标xB :
-//    DEFINE_SHOW_BIGNUM(key_B->P->y);//坐标yB :
-//
-//    //加密
-//    sm2_encrypt(ecp, &message_data);
-//    memcpy(encryptedText, message_data.C, sizeof(message_data.C));
-//
-//    printf(">>%s$$\n", encryptedText);
-//
-//    sm2_ec_key_free(key_B);
-//    ec_param_free(ecp);
+
+    memcpy(encrypted_text, message_data.C, sizeof(message_data.C));
 }
 
-void gm_sm2_decrypt(const char *private_key, const unsigned char *encryptedText, char unsigned *text)
+void gm_sm2_decrypt(const char *private_key, const unsigned char *encrypted_text, long encrypted_text_length, char unsigned *text)
 {
-    
+    message_st message_data;
+
+    ec_param *ecp;
+    ecp = ec_param_new();
+    ec_param_init(ecp, sm2_param, sm2_type, sm2_point_bit_length);
+
+    sm2_ec_key *key_B;
+    key_B = sm2_ec_key_new(ecp);
+    sm2_ec_key_init(key_B, private_key, ecp);
+
+    memset(&message_data, 0, sizeof(message_data));
+    //明文的长度，这个长度应该根据密文计算，这里固定写6
+    message_data.message_byte_length = 6;
+    //k的比特长度是明文长度*8
+    message_data.klen_bit = message_data.message_byte_length * 8;
+
+    sm2_bn2bin(key_B->d, message_data.private_key, ecp->point_byte_length);
+    message_data.decrypt = (BYTE *)OPENSSL_malloc(message_data.message_byte_length + 1);
+    memset(message_data.decrypt, 0, message_data.message_byte_length + 1);
+
+    //设置密文
+    for (int i = 0; i < encrypted_text_length; i++)
+        message_data.C[i] = encrypted_text[i];
+
+    sm2_decrypt(ecp, &message_data);
+    memcpy(text, message_data.decrypt, strlen(message_data.decrypt));
+    OPENSSL_free(message_data.decrypt);
+
+    sm2_ec_key_free(key_B);
+    ec_param_free(ecp);
 }
 
-void gm_md5(const unsigned char* buffer, const size_t buffer_length, char* md5)
+void gm_md5(const unsigned char* buffer, long buffer_length, char* md5)
 {
     DWORD hash[8] = {0};
 
