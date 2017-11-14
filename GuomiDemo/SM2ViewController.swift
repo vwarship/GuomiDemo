@@ -8,36 +8,107 @@
 
 import UIKit
 
-class SM2ViewController: UIViewController {
+class SM2ViewController: UIViewController, UITextViewDelegate {
+    @IBOutlet weak var randomNumberTextView: UITextView!
+    @IBOutlet weak var publicKeyTextView: UITextView!
+    @IBOutlet weak var privateKeyTextView: UITextView!
+    @IBOutlet weak var generateKeyButton: UIButton!
+    @IBOutlet weak var inTextView: UITextView!
+    @IBOutlet weak var outTextView: UITextView!
+
+    var randomNumber: String {
+        set {
+            randomNumberTextView.text = newValue
+        }
+        get {
+            return randomNumberTextView.text ?? ""
+        }
+    }
+
+    var publicKeyText: String {
+        set {
+            publicKeyTextView.text = newValue
+        }
+        get {
+            return publicKeyTextView.text ?? ""
+        }
+    }
+    
+    var privateKeyText: String {
+        set {
+            privateKeyTextView.text = newValue
+        }
+        get {
+            return privateKeyTextView.text ?? ""
+        }
+    }
+
+    var inText: String {
+        set {
+            inTextView.text = newValue
+        }
+        get {
+            return inTextView.text ?? ""
+        }
+    }
+    
+    var outText: String {
+        set {
+            outTextView.text = newValue
+        }
+        get {
+            return outTextView.text ?? ""
+        }
+    }
+    
+    let bufferSize = 1024
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let random = CString(size: 100)
-        gm_generate_random(random.toPtr())
-        print("random: \(random.toString())")
-        
-//        let text = "SM2 encrypt test"
-        let text = "123456"
-
-        let publicKey = CString(size: 1000)
-        let privateKey = CString(size: 1000)
-        gm_sm2_generate_keys(random.toPtr(), publicKey.toPtr(), privateKey.toPtr())
-        print("publicKey: \(publicKey.toString())")
-        print("privateKey: \(privateKey.toString())")
-
-        let encryptedText = CUString(size: 10000)
-        gm_sm2_encrypt(publicKey.toPtr(), text, text.count, encryptedText.toPtr())
-        
-        let decryptedText = CUString(size: 10000)
-        gm_sm2_decrypt(privateKey.toPtr(), encryptedText.toPtr(), 1024, decryptedText.toPtr())
-        print("decryptedText: \(decryptedText.toString())")
+        inTextView.returnKeyType = .done
+        inTextView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func touchGenerateKeys(_ sender: UIButton) {
+        let random = CString(size: bufferSize)
+        gm_generate_random(random.toPtr())
+        randomNumber = random.toString()
+        
+        let publicKey = CString(size: bufferSize)
+        let privateKey = CString(size: bufferSize)
+        gm_sm2_generate_keys(randomNumber, publicKey.toPtr(), privateKey.toPtr())
+        publicKeyText = publicKey.toString()
+        privateKeyText = privateKey.toString()
+    }
+    
+    @IBAction func touchEncrypt(_ sender: UIButton) {
+        let encryptedText = CUString(size: bufferSize)
+        gm_sm2_encrypt(publicKeyText, inText, inText.count, encryptedText.toPtr())
+        outText = buffer2Hexstr(buffer: encryptedText.toPtr(), buffer_len: encryptedText.strSize)
+        
+        outTextView.selectAll(self)
+    }
+    
+    @IBAction func touchDecrypt(_ sender: UIButton) {
+        let encryptedText = hexstr2Buffer(hexstr: inText)
+        let decryptedText = CUString(size: bufferSize)
+        gm_sm2_decrypt(privateKeyText, encryptedText.buffer.toPtr(), encryptedText.len, decryptedText.toPtr())
+        outText = decryptedText.toString()
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return true
+        }
+        
+        return true
+    }
 
     /*
     // MARK: - Navigation

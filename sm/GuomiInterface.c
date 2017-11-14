@@ -133,19 +133,18 @@ void gm_sm2_encrypt(const char *public_key, const unsigned char *text, long text
 
 void gm_sm2_decrypt(const char *private_key, const unsigned char *encrypted_text, long encrypted_text_length, char unsigned *text)
 {
-    message_st message_data;
-
     ec_param *ecp;
     ecp = ec_param_new();
     ec_param_init(ecp, sm2_param, sm2_type, sm2_point_bit_length);
-
+    
     sm2_ec_key *key_B;
     key_B = sm2_ec_key_new(ecp);
     sm2_ec_key_init(key_B, private_key, ecp);
 
+    message_st message_data;
     memset(&message_data, 0, sizeof(message_data));
-    //明文的长度，这个长度应该根据密文计算，这里固定写6
-    message_data.message_byte_length = 6;
+    //明文的长度，这个长度应该根据密文计算，这里固定写8
+    message_data.message_byte_length = 8;
     //k的比特长度是明文长度*8
     message_data.klen_bit = message_data.message_byte_length * 8;
 

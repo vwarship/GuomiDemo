@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dDm-DV-xAg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dDm-DV-xAg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="T6H-VX-OuQ">
-                                <rect key="frame" x="10" y="30" width="356" height="627"/>
+                                <rect key="frame" x="10" y="74" width="356" height="583"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QIc-BZ-mEn">
                                         <rect key="frame" x="0.0" y="0.0" width="356" height="568"/>
@@ -29,7 +29,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0eg-cB-h2E">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0eg-cB-h2E">
                                                 <rect key="frame" x="0.0" y="289" width="356" height="279"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -38,7 +38,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Er-ED-Xbp">
-                                        <rect key="frame" x="0.0" y="578" width="356" height="49"/>
+                                        <rect key="frame" x="0.0" y="578" width="356" height="5"/>
                                         <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="HASH"/>
@@ -76,7 +76,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="c36-MA-dK6">
-                                <rect key="frame" x="9.5" y="30" width="356" height="627"/>
+                                <rect key="frame" x="9.5" y="74" width="356" height="583"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zmb-tV-t9f">
                                         <rect key="frame" x="0.0" y="0.0" width="356" height="533"/>
@@ -99,7 +99,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="J1y-wc-w5c">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="J1y-wc-w5c">
                                                         <rect key="frame" x="0.0" y="226.5" width="356" height="226.5"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -110,10 +110,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1WD-TF-y5J">
-                                        <rect key="frame" x="0.0" y="543" width="356" height="84"/>
+                                        <rect key="frame" x="0.0" y="543" width="356" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8w3-w1-Oz0">
-                                                <rect key="frame" x="0.0" y="0.0" width="173" height="84"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="173" height="40"/>
                                                 <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="加密"/>
@@ -124,7 +124,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwD-Yr-UbT">
-                                                <rect key="frame" x="183" y="0.0" width="173" height="84"/>
+                                                <rect key="frame" x="183" y="0.0" width="173" height="40"/>
                                                 <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="解密"/>
@@ -167,7 +167,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Bzf-iJ-BNc">
-                                <rect key="frame" x="10" y="30" width="354" height="627"/>
+                                <rect key="frame" x="10" y="74" width="354" height="583"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="s3r-nz-7hu">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="515"/>
@@ -178,7 +178,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="t9y-Xy-273">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="t9y-Xy-273">
                                                 <rect key="frame" x="0.0" y="262.5" width="354" height="252.5"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -187,13 +187,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Fcr-0e-KU4">
-                                        <rect key="frame" x="0.0" y="525" width="354" height="102"/>
+                                        <rect key="frame" x="0.0" y="525" width="354" height="58"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="e9k-H7-6xv">
-                                                <rect key="frame" x="0.0" y="0.0" width="234" height="102"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="234" height="58"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLa-OP-9E2">
-                                                        <rect key="frame" x="0.0" y="0.0" width="234" height="46"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="234" height="24"/>
                                                         <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                         <state key="normal" title="字符转十六进制"/>
@@ -203,7 +203,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rde-Oq-hpK">
-                                                        <rect key="frame" x="0.0" y="56" width="234" height="46"/>
+                                                        <rect key="frame" x="0.0" y="34" width="234" height="24"/>
                                                         <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                         <state key="normal" title="十六进制转字符"/>
@@ -215,10 +215,10 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7b-gq-v1a">
-                                                <rect key="frame" x="244" y="0.0" width="110" height="102"/>
+                                                <rect key="frame" x="244" y="0.0" width="110" height="58"/>
                                                 <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="110" id="VEk-6k-HFW"/>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="110" id="VEk-6k-HFW"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="🔃"/>
@@ -329,21 +329,136 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="sm2 test" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Uu6-23-f28">
-                                <rect key="frame" x="9" y="20" width="356" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5Q9-Z4-g1b">
+                                <rect key="frame" x="10" y="74" width="356" height="583"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="l7o-9S-bC6">
+                                        <rect key="frame" x="0.0" y="0.0" width="356" height="170"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6Dq-Ex-dck">
+                                                <rect key="frame" x="0.0" y="0.0" width="274" height="170"/>
+                                                <subviews>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="随机数" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Uu6-23-f28">
+                                                        <rect key="frame" x="0.0" y="0.0" width="274" height="50"/>
+                                                        <color key="backgroundColor" red="0.83364516700000002" green="1" blue="0.8176254007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="公钥"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="公钥" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rx5-9n-SHa">
+                                                        <rect key="frame" x="0.0" y="60" width="274" height="50"/>
+                                                        <color key="backgroundColor" red="0.83364516700000002" green="1" blue="0.8176254007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="公钥"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="私钥" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="csx-ks-Kaw">
+                                                        <rect key="frame" x="0.0" y="120" width="274" height="50"/>
+                                                        <color key="backgroundColor" red="0.83364516700000002" green="1" blue="0.8176254007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="私钥" label="私钥">
+                                                            <accessibilityTraits key="traits" none="YES"/>
+                                                        </accessibility>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gDJ-dk-oLY">
+                                                <rect key="frame" x="284" y="0.0" width="72" height="170"/>
+                                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="72" id="QfI-Rs-Ivr"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="72" id="pcS-s8-1QF"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="生成   🔑"/>
+                                                <connections>
+                                                    <action selector="touchGenerateKeys:" destination="jUZ-u2-VIW" eventType="touchUpInside" id="KXS-wh-X2c"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TlJ-n1-fxx">
+                                        <rect key="frame" x="0.0" y="180" width="356" height="403"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rwq-kG-cLa">
+                                                <rect key="frame" x="0.0" y="0.0" width="356" height="330"/>
+                                                <subviews>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="sm2 test" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="daS-3H-UUk">
+                                                        <rect key="frame" x="0.0" y="0.0" width="356" height="160"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yWF-q7-0x8">
+                                                        <rect key="frame" x="0.0" y="170" width="356" height="160"/>
+                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ay7-v4-wql">
+                                                <rect key="frame" x="0.0" y="340" width="356" height="63"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tq2-Lr-eTz">
+                                                        <rect key="frame" x="0.0" y="0.0" width="173" height="63"/>
+                                                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <state key="normal" title="加密"/>
+                                                        <connections>
+                                                            <action selector="buffer2HexstrButton:" destination="pX9-gL-M06" eventType="touchUpInside" id="RFx-Xv-fRD"/>
+                                                            <action selector="hashButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gyt-rL-dfM"/>
+                                                            <action selector="touchEncrypt:" destination="jUZ-u2-VIW" eventType="touchUpInside" id="XQ0-SH-Zhv"/>
+                                                            <action selector="touchEncrypt:" destination="MKi-1x-YGG" eventType="touchUpInside" id="zMA-ee-d6p"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8f-Va-TsX">
+                                                        <rect key="frame" x="183" y="0.0" width="173" height="63"/>
+                                                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <state key="normal" title="解密"/>
+                                                        <connections>
+                                                            <action selector="buffer2HexstrButton:" destination="pX9-gL-M06" eventType="touchUpInside" id="0dB-Jf-iJD"/>
+                                                            <action selector="hashButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Sx-Yl-Eyt"/>
+                                                            <action selector="touchDecrypt:" destination="jUZ-u2-VIW" eventType="touchUpInside" id="pv2-LQ-R0J"/>
+                                                            <action selector="touchDecrypt:" destination="MKi-1x-YGG" eventType="touchUpInside" id="t4l-jc-afD"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="rwq-kG-cLa" firstAttribute="leading" secondItem="TlJ-n1-fxx" secondAttribute="leading" id="VT3-De-Ac7"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="TlJ-n1-fxx" firstAttribute="top" secondItem="5Q9-Z4-g1b" secondAttribute="top" constant="180" id="Kg5-jA-9GZ"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5Q9-Z4-g1b" firstAttribute="centerX" secondItem="gck-hi-oIq" secondAttribute="centerX" id="1FJ-Id-TaB"/>
+                            <constraint firstItem="5Q9-Z4-g1b" firstAttribute="top" secondItem="KoA-Of-wvJ" secondAttribute="top" constant="10" id="N1l-Lb-w0S"/>
+                            <constraint firstItem="KoA-Of-wvJ" firstAttribute="bottom" secondItem="TlJ-n1-fxx" secondAttribute="bottom" constant="10" id="c4c-33-N7e"/>
+                            <constraint firstItem="5Q9-Z4-g1b" firstAttribute="leading" secondItem="KoA-Of-wvJ" secondAttribute="leading" constant="10" id="lb9-10-Sk3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="KoA-Of-wvJ"/>
                     </view>
+                    <connections>
+                        <outlet property="generateKeyButton" destination="gDJ-dk-oLY" id="1kj-mX-aNV"/>
+                        <outlet property="inTextView" destination="daS-3H-UUk" id="VdW-YD-xPV"/>
+                        <outlet property="outTextView" destination="yWF-q7-0x8" id="W9z-jX-3Nb"/>
+                        <outlet property="privateKeyTextView" destination="csx-ks-Kaw" id="OlC-zb-6Xs"/>
+                        <outlet property="publicKeyTextView" destination="Rx5-9n-SHa" id="TkD-h2-PJu"/>
+                        <outlet property="randomNumberTextView" destination="Uu6-23-f28" id="6qW-2l-Y42"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTE-Fh-Nij" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1230" y="57"/>
+            <point key="canvasLocation" x="1229.5999999999999" y="56.221889055472268"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tZQ-Bw-IWT">

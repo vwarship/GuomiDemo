@@ -58,6 +58,8 @@ class SM4ViewController: UIViewController, UITextViewDelegate {
         gm_sm4_encrypt(key, inText, inTextLength, encryptedText.toPtr())
         
         outText = buffer2Hexstr(buffer: encryptedText.toPtr(), buffer_len: encryptedTextLen)
+        
+        outTextView.selectAll(self)
     }
     
     @IBAction func touchDecrypt(_ sender: UIButton) {
