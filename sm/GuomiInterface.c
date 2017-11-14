@@ -15,6 +15,8 @@
 #include "util.h"
 #include "part4.h"
 
+void gm_sm2_generate_private_key(char *private_key);
+
 void gm_buffer2hexstr(const unsigned char* buffer, long len, char* hexstr)
 {
     char* str = OPENSSL_buf2hexstr(buffer, len);
@@ -40,7 +42,31 @@ void gm_hexstr2buffer(const char* hexstr, unsigned char* buffer, long* buffer_le
 
 void gm_generate_random(char *random_num)
 {
-    strcpy(random_num, "4C62EEFD6ECFC2B95B92FD6C3D9575148AFA17425546D49018E5388D49DD7B4F");
+    //随机数种子
+    static const char rnd_seed[] = "guomi random num seed $%#@!";
+    RAND_seed(rnd_seed, sizeof rnd_seed);
+    
+    const int random_num_len = 32;
+    unsigned char num[random_num_len] = {'\0'};
+    //生成随机数
+    RAND_bytes(num, random_num_len);
+
+    const int random_num_hexstr_len = random_num_len*3;
+    char hexstr[random_num_hexstr_len] = {'\0'};
+    gm_buffer2hexstr(num, sizeof(num), hexstr);
+    
+    //移除:
+    char hexstr2[random_num_hexstr_len] = {'\0'};
+    for (int j=0, i=0; i<sizeof(hexstr); ++i)
+    {
+        if (hexstr[i] == ':')
+            continue;
+        
+        hexstr2[j] = hexstr[i];
+        ++j;
+    }
+    
+    strcpy(random_num, hexstr2);
 }
 
 void gm_sm2_generate_keys(const char *random_num, char *public_key, char *private_key)
@@ -53,7 +79,7 @@ void gm_sm2_generate_keys(const char *random_num, char *public_key, char *privat
     sm2_ec_key *key_B;
     message_st message_data;
     
-    strcpy(private_key, "00000000008f8b37dc19d95550fd06c1cacd43fe165f80e3b80242f0c66a733");
+    gm_sm2_generate_private_key(private_key);
     
     ecp = ec_param_new();
     ec_param_init(ecp, sm2_param, type, point_bit_length);
@@ -68,6 +94,15 @@ void gm_sm2_generate_keys(const char *random_num, char *public_key, char *privat
     
     OPENSSL_free(x);
     OPENSSL_free(y);
+}
+
+void gm_sm2_generate_private_key(char *private_key)
+{
+    //todo:先使用随机数代替吧
+    char random_num[100] = {'\0'};
+    gm_generate_random(random_num);
+    
+    strcpy(private_key, random_num);
 }
 
 static char **sm2_param = sm2_param_recommand;
@@ -143,7 +178,8 @@ void gm_sm2_decrypt(const char *private_key, const unsigned char *encrypted_text
 
     message_st message_data;
     memset(&message_data, 0, sizeof(message_data));
-    //明文的长度，这个长度应该根据密文计算，这里固定写8
+    
+    //todo:明文的长度，这个长度应该根据密文计算，这里固定写8
     message_data.message_byte_length = 8;
     //k的比特长度是明文长度*8
     message_data.klen_bit = message_data.message_byte_length * 8;
