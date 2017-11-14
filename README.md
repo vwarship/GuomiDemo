@@ -11,17 +11,16 @@
 
 ## SM2
 
+![SM2](images/sm2.png)
+
 ## SM3
 
 ![SM3](images/sm3.png)
-
 
 ## SM4
 
 ![SM4](images/sm4.png)
 
-
 ## Util
 
 ![Util](images/util.png)
-
