@@ -28,10 +28,10 @@ class SM3ViewController: UIViewController, UITextViewDelegate {
 
     @IBAction func hashButton(_ sender: UIButton) {
         if let inText = inTextView.text {
-            let md5 = CString(size: 100)
-            gm_md5(inText, inText.count, md5.toPtr());
+            let hashCode = CString(size: 100)
+            gm_sm3(inText, inText.count, hashCode.toPtr());
             
-            outTextView.text = md5.toString()
+            outTextView.text = hashCode.toString()
         }
     }
     

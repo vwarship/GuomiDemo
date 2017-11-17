@@ -200,7 +200,7 @@ void gm_sm2_decrypt(const char *private_key, const unsigned char *encrypted_text
     ec_param_free(ecp);
 }
 
-void gm_md5(const unsigned char* buffer, long buffer_length, char* md5)
+void gm_sm3(const unsigned char* buffer, long buffer_length, char* hash_code)
 {
     DWORD hash[8] = {0};
 
@@ -212,7 +212,7 @@ void gm_md5(const unsigned char* buffer, long buffer_length, char* md5)
     {
         char buf[10] = {0};
         sprintf(buf, "%02x", hash[i]);
-        strcat(md5, buf);
+        strcat(hash_code, buf);
     }
 }
 

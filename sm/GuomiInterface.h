@@ -20,7 +20,7 @@ void gm_sm2_generate_keys(const char *random_num, char *public_key, char *privat
 void gm_sm2_encrypt(const char *public_key, const unsigned char *text, long text_length, char unsigned *encrypted_text);
 void gm_sm2_decrypt(const char *private_key, const unsigned char *encrypted_text, long encrypted_text_length, char unsigned *text);
 
-void gm_md5(const unsigned char *buffer, long buffer_length, char *md5);
+void gm_sm3(const unsigned char *buffer, long buffer_length, char *hash_code);
 
 long gm_sm4_calc_encrypted_data_memory_size(long data_len);
 void gm_sm4_encrypt(const char *key, const unsigned char *input, long len, unsigned char *output);
