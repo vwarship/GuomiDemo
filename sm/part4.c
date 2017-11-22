@@ -43,7 +43,7 @@ int sm2_encrypt(ec_param *ecp, message_st *message_data)
 	t = KDF((BYTE *)message_data->C_2, message_data->klen_bit, ecp->point_byte_length + ecp->point_byte_length);
 	for (i = 0; i < message_data->message_byte_length; i++)
 	{
-		message_data->C_2[i] = t[i] ^ message_data->message[i];
+        message_data->C_2[i] = t[i] ^ message_data->message[i];
 	}
 	OPENSSL_free(t);
 
@@ -128,7 +128,7 @@ int sm2_decrypt(ec_param *ecp, message_st *message_data)
 
 	for (i = 0; i < message_data->message_byte_length; i++)
 	{
-		message_data->decrypt[i] = t[i] ^ message_data->C_2[i];
+        message_data->decrypt[i] = t[i] ^ message_data->C_2[i];
 	}
 	OPENSSL_free(t);
 

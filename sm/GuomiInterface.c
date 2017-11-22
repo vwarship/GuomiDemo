@@ -109,8 +109,52 @@ static char **sm2_param = sm2_param_recommand;
 static int sm2_type = TYPE_GFp;
 static int sm2_point_bit_length = 256;
 
+void testpart4(char **sm2_param, int type, int point_bit_length)
+{
+    ec_param *ecp;
+    sm2_ec_key *key_B;
+    message_st message_data;
+    
+    ecp = ec_param_new();
+    ec_param_init(ecp, sm2_param, type, point_bit_length);
+    
+    key_B = sm2_ec_key_new(ecp);
+    sm2_ec_key_init(key_B, sm2_param_d_B[ecp->type], ecp);
+    
+    unsigned char *message = "Wjj'163";
+    memset(&message_data, 0, sizeof(message_data));
+    message_data.message = (BYTE *)message;
+    message_data.message_byte_length = strlen((char *)message_data.message);
+    message_data.klen_bit = message_data.message_byte_length * 8;
+    sm2_hex2bin((BYTE *)sm2_param_k[ecp->type], message_data.k, ecp->point_byte_length);
+    sm2_bn2bin(key_B->d, message_data.private_key, ecp->point_byte_length);
+    sm2_bn2bin(key_B->P->x, message_data.public_key.x, ecp->point_byte_length);
+    sm2_bn2bin(key_B->P->y, message_data.public_key.y, ecp->point_byte_length);
+    DEFINE_SHOW_BIGNUM(key_B->d);
+    DEFINE_SHOW_BIGNUM(key_B->P->x);
+    DEFINE_SHOW_BIGNUM(key_B->P->y);
+    
+    message_data.decrypt = (BYTE *)OPENSSL_malloc(message_data.message_byte_length + 1);
+    memset(message_data.decrypt, 0, message_data.message_byte_length+1);
+    
+    sm2_encrypt(ecp, &message_data);
+    sm2_decrypt(ecp, &message_data);
+    
+    printf("decrypt: len: %d\n%s\n", strlen(message_data.decrypt), message_data.decrypt);
+    OPENSSL_free(message_data.decrypt);
+    
+    sm2_ec_key_free(key_B);
+    ec_param_free(ecp);
+}
+
 void gm_sm2_encrypt(const char *public_key, const unsigned char *text, long text_length, char unsigned *encrypted_text)
 {
+    printf("1--------------------------\n");
+    testpart4(sm2_param_recommand, TYPE_GFp, 256);
+    printf("2--------------------------\n");
+    
+    printf(">>>>>%s\n", text);
+    
     if (!public_key)
         return;
 
@@ -179,8 +223,27 @@ void gm_sm2_decrypt(const char *private_key, const unsigned char *encrypted_text
     message_st message_data;
     memset(&message_data, 0, sizeof(message_data));
     
-    //todo:明文的长度，这个长度应该根据密文计算，这里固定写8
-    message_data.message_byte_length = 8;
+    //设置密文
+    for (int i = 0; i < encrypted_text_length; i++)
+        message_data.C[i] = encrypted_text[i];
+    
+    //计算加密文本的实际尺寸
+    int real_encrypted_text_length = encrypted_text_length;
+    const int check_len = 1;
+    for (int i = encrypted_text_length-check_len; i >= 0; i-=check_len)
+    {
+        if (message_data.C[i]!='\0')
+        {
+            real_encrypted_text_length = i + check_len;
+            break;
+        }
+    }
+
+    //根据加密时逆向获得
+    int message_byte_length = real_encrypted_text_length - 1 - ecp->point_byte_length - ecp->point_byte_length - 32;
+    printf(".....%d, %d\n", real_encrypted_text_length, message_byte_length);
+
+    message_data.message_byte_length = message_byte_length;
     //k的比特长度是明文长度*8
     message_data.klen_bit = message_data.message_byte_length * 8;
 
@@ -188,16 +251,14 @@ void gm_sm2_decrypt(const char *private_key, const unsigned char *encrypted_text
     message_data.decrypt = (BYTE *)OPENSSL_malloc(message_data.message_byte_length + 1);
     memset(message_data.decrypt, 0, message_data.message_byte_length + 1);
 
-    //设置密文
-    for (int i = 0; i < encrypted_text_length; i++)
-        message_data.C[i] = encrypted_text[i];
-
     sm2_decrypt(ecp, &message_data);
     memcpy(text, message_data.decrypt, strlen(message_data.decrypt));
     OPENSSL_free(message_data.decrypt);
 
     sm2_ec_key_free(key_B);
     ec_param_free(ecp);
+    
+    printf("decrypt>>>>%s\n", text);
 }
 
 void gm_sm3(const unsigned char* buffer, long buffer_length, char* hash_code)
