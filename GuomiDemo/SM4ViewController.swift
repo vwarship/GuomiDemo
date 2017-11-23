@@ -14,7 +14,12 @@ class SM4ViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var outTextView: UITextView!
     
     var key: String {
-        return keyTextView.text ?? ""
+        set {
+            keyTextView.text = newValue
+        }
+        get {
+            return keyTextView.text ?? ""
+        }
     }
     
     var inText: String {
@@ -35,6 +40,8 @@ class SM4ViewController: UIViewController, UITextViewDelegate {
         }
     }
 
+    let keySize: Int = 16;
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,6 +52,10 @@ class SM4ViewController: UIViewController, UITextViewDelegate {
         keyTextView.delegate = self
         inTextView.delegate = self
         outTextView.delegate = self
+        
+        let randomNum = CUString(size: keySize)
+        gm_generate_random(keySize, randomNum.toPtr())
+        key = buffer2Hexstr(buffer: randomNum.toPtr(), buffer_len: keySize)
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,10 +63,12 @@ class SM4ViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func touchEncrypt(_ sender: UIButton) {
+        let keyBytes = hexstr2Buffer(hexstr: key)
+
         let inTextLength = inText.lengthOfBytes(using: .utf8)
         let encryptedTextLen = gm_sm4_calc_encrypted_data_memory_size(inTextLength)
-        let encryptedText = CUString(size: encryptedTextLen)
-        gm_sm4_encrypt(key, inText, inTextLength, encryptedText.toPtr())
+        let encryptedText = CUString(size: encryptedTextLen + 1)
+        gm_sm4_encrypt(keyBytes.buffer.toPtr(), inText, encryptedTextLen, encryptedText.toPtr())
         
         outText = buffer2Hexstr(buffer: encryptedText.toPtr(), buffer_len: encryptedTextLen)
         
@@ -63,9 +76,11 @@ class SM4ViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func touchDecrypt(_ sender: UIButton) {
+        let keyBytes = hexstr2Buffer(hexstr: key)
+
         let encryptedData = hexstr2Buffer(hexstr: inText)
-        let decryptedText = CUString(size: encryptedData.len)
-        gm_sm4_decrypt(key, encryptedData.buffer.toPtr(), encryptedData.len, decryptedText.toPtr())
+        let decryptedText = CUString(size: encryptedData.len + 1)
+        gm_sm4_decrypt(keyBytes.buffer.toPtr(), encryptedData.buffer.toPtr(), encryptedData.len, decryptedText.toPtr())
 
         outText = decryptedText.toString()
     }

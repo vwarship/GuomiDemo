@@ -81,7 +81,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zmb-tV-t9f">
                                         <rect key="frame" x="0.0" y="0.0" width="356" height="533"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="scaleToFill" text="sm4 key" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fcn-fG-ehC">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="scaleToFill" editable="NO" text="sm4 key" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fcn-fG-ehC">
                                                 <rect key="frame" x="0.0" y="0.0" width="356" height="70"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <constraints>

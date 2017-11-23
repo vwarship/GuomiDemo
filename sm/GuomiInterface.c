@@ -40,33 +40,14 @@ void gm_hexstr2buffer(const char* hexstr, unsigned char* buffer, long* buffer_le
     }
 }
 
-void gm_generate_random(char *random_num)
+void gm_generate_random(long random_num_size, unsigned char *random_num)
 {
     //随机数种子
     static const char rnd_seed[] = "guomi random num seed $%#@!";
     RAND_seed(rnd_seed, sizeof rnd_seed);
     
-    const int random_num_len = 32;
-    unsigned char num[random_num_len] = {'\0'};
     //生成随机数
-    RAND_bytes(num, random_num_len);
-
-    const int random_num_hexstr_len = random_num_len*3;
-    char hexstr[random_num_hexstr_len] = {'\0'};
-    gm_buffer2hexstr(num, sizeof(num), hexstr);
-    
-    //移除:
-    char hexstr2[random_num_hexstr_len] = {'\0'};
-    for (int j=0, i=0; i<sizeof(hexstr); ++i)
-    {
-        if (hexstr[i] == ':')
-            continue;
-        
-        hexstr2[j] = hexstr[i];
-        ++j;
-    }
-    
-    strcpy(random_num, hexstr2);
+    RAND_bytes(random_num, random_num_size);
 }
 
 void gm_sm2_generate_keys(const char *random_num, char *public_key, char *private_key)
@@ -99,10 +80,26 @@ void gm_sm2_generate_keys(const char *random_num, char *public_key, char *privat
 void gm_sm2_generate_private_key(char *private_key)
 {
     //todo:先使用随机数代替吧
-    char random_num[100] = {'\0'};
-    gm_generate_random(random_num);
-    
-    strcpy(private_key, random_num);
+    const int random_num_size = 32;
+    char random_num[random_num_size] = {'\0'};
+    gm_generate_random(random_num_size, random_num);
+ 
+    const int random_num_hexstr_len = random_num_size*3;
+    char hexstr[random_num_hexstr_len] = {'\0'};
+    gm_buffer2hexstr(random_num, sizeof(random_num), hexstr);
+
+    //移除:
+    char hexstr2[random_num_hexstr_len] = {'\0'};
+    for (int j=0, i=0; i<sizeof(hexstr); ++i)
+    {
+        if (hexstr[i] == ':')
+            continue;
+
+        hexstr2[j] = hexstr[i];
+        ++j;
+    }
+
+    strcpy(private_key, hexstr2);
 }
 
 static char **sm2_param = sm2_param_recommand;
@@ -149,10 +146,10 @@ void testpart4(char **sm2_param, int type, int point_bit_length)
 
 void gm_sm2_encrypt(const char *public_key, const unsigned char *text, long text_length, char unsigned *encrypted_text)
 {
-    printf("1--------------------------\n");
-    testpart4(sm2_param_recommand, TYPE_GFp, 256);
-    printf("2--------------------------\n");
-    
+//    printf("1--------------------------\n");
+//    testpart4(sm2_param_recommand, TYPE_GFp, 256);
+//    printf("2--------------------------\n");
+//    
     printf(">>>>>%s\n", text);
     
     if (!public_key)
@@ -294,7 +291,7 @@ long gm_sm4_calc_encrypted_data_memory_size(long data_len)
     return data_len;
 }
 
-void gm_sm4_encrypt(const char *key, const unsigned char *input, long len, unsigned char *output)
+void gm_sm4_encrypt(const unsigned char *key, const unsigned char *input, long len, unsigned char *output)
 {
     sm4_context ctx;
 
@@ -302,7 +299,7 @@ void gm_sm4_encrypt(const char *key, const unsigned char *input, long len, unsig
     sm4_crypt_ecb(&ctx, 1, len, input, output);
 }
 
-void gm_sm4_decrypt(const char *key, const unsigned char *input, long len, unsigned char *output)
+void gm_sm4_decrypt(const unsigned char *key, const unsigned char *input, long len, unsigned char *output)
 {
     sm4_context ctx;
     sm4_setkey_dec(&ctx, key);

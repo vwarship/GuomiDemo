@@ -75,10 +75,11 @@ class SM2ViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func touchGenerateKeys(_ sender: UIButton) {
-        let random = CString(size: bufferSize)
-        gm_generate_random(random.toPtr())
-        randomNumber = random.toString()
-        
+        let randomNumSize: Int = 32;
+        let randomNum = CUString(size: randomNumSize)
+        gm_generate_random(randomNumSize, randomNum.toPtr())
+        randomNumber = buffer2Hexstr(buffer: randomNum.toPtr(), buffer_len: randomNumSize)
+
         let publicKey = CString(size: bufferSize)
         let privateKey = CString(size: bufferSize)
         gm_sm2_generate_keys(randomNumber, publicKey.toPtr(), privateKey.toPtr())
