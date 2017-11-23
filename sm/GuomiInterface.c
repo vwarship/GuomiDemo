@@ -149,7 +149,7 @@ void gm_sm2_encrypt(const char *public_key, const unsigned char *text, long text
 //    printf("1--------------------------\n");
 //    testpart4(sm2_param_recommand, TYPE_GFp, 256);
 //    printf("2--------------------------\n");
-//    
+    
     printf(">>>>>%s\n", text);
     
     if (!public_key)

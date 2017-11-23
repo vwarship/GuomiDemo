@@ -78,7 +78,8 @@ class SM2ViewController: UIViewController, UITextViewDelegate {
         let randomNumSize: Int = 32;
         let randomNum = CUString(size: randomNumSize)
         gm_generate_random(randomNumSize, randomNum.toPtr())
-        randomNumber = buffer2Hexstr(buffer: randomNum.toPtr(), buffer_len: randomNumSize)
+        let randomNumHexStr = buffer2Hexstr(buffer: randomNum.toPtr(), buffer_len: randomNumSize)
+        randomNumber = randomNumHexStr.replacingOccurrences(of: ":", with: "")
 
         let publicKey = CString(size: bufferSize)
         let privateKey = CString(size: bufferSize)
