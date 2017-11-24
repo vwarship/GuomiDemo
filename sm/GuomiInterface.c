@@ -146,10 +146,6 @@ void testpart4(char **sm2_param, int type, int point_bit_length)
 
 void gm_sm2_encrypt(const char *public_key, const unsigned char *text, long text_length, char unsigned *encrypted_text)
 {
-//    printf("1--------------------------\n");
-//    testpart4(sm2_param_recommand, TYPE_GFp, 256);
-//    printf("2--------------------------\n");
-    
     printf(">>>>>%s\n", text);
     
     if (!public_key)

@@ -94,9 +94,6 @@ class SM2ViewController: UIViewController, UITextViewDelegate {
         outText = buffer2Hexstr(buffer: encryptedText.toPtr(), buffer_len: encryptedText.strSize)
         
         outTextView.selectAll(self)
-
-        let decryptedText = CUString(size: bufferSize)
-        gm_sm2_decrypt(privateKeyText, encryptedText.toPtr(), encryptedText.strSize, decryptedText.toPtr())
     }
     
     @IBAction func touchDecrypt(_ sender: UIButton) {
