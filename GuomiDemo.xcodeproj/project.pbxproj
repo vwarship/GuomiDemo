@@ -7,42 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		134FD0A41FA1B9900006EE5F /* GuomiInterface.c in Sources */ = {isa = PBXBuildFile; fileRef = 134FD0A21FA1B9900006EE5F /* GuomiInterface.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		134FD0A61FA2A6D20006EE5F /* SM2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134FD0A51FA2A6D20006EE5F /* SM2ViewController.swift */; };
 		134FD0A81FA2FD310006EE5F /* CString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134FD0A71FA2FD310006EE5F /* CString.swift */; };
-		134FD0C91FA3247C0006EE5F /* sm4test.c in Sources */ = {isa = PBXBuildFile; fileRef = 134FD0C51FA3247B0006EE5F /* sm4test.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		134FD0CB1FA3247C0006EE5F /* sm4.c in Sources */ = {isa = PBXBuildFile; fileRef = 134FD0C81FA3247C0006EE5F /* sm4.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		135AB32C1FA1558900647374 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135AB32B1FA1558900647374 /* AppDelegate.swift */; };
 		135AB32E1FA1558900647374 /* SM3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135AB32D1FA1558900647374 /* SM3ViewController.swift */; };
 		135AB3311FA1558900647374 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 135AB32F1FA1558900647374 /* Main.storyboard */; };
 		135AB3331FA1558900647374 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 135AB3321FA1558900647374 /* Assets.xcassets */; };
 		135AB3361FA1558900647374 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 135AB3341FA1558900647374 /* LaunchScreen.storyboard */; };
-		135AB3431FA1562400647374 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 135AB3411FA1562400647374 /* libssl.a */; };
-		135AB3441FA1562400647374 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 135AB3421FA1562400647374 /* libcrypto.a */; };
-		13719E521FA18232001A4381 /* part3.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E3D1FA1822E001A4381 /* part3.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		13719E531FA18232001A4381 /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E3F1FA1822E001A4381 /* util.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		13719E541FA18232001A4381 /* part1.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E401FA1822E001A4381 /* part1.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		13719E551FA18232001A4381 /* part2.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E421FA1822E001A4381 /* part2.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		13719E561FA18232001A4381 /* sm3.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E481FA18230001A4381 /* sm3.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		13719E571FA18232001A4381 /* sm2_ec_key.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E491FA18230001A4381 /* sm2_ec_key.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		13719E581FA18232001A4381 /* sm2.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E4A1FA18230001A4381 /* sm2.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		13719E591FA18232001A4381 /* part4.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E4B1FA18230001A4381 /* part4.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		13719E5A1FA18232001A4381 /* ec_param.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E4D1FA18231001A4381 /* ec_param.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		13719E5B1FA18232001A4381 /* sm2_test_param.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E4E1FA18231001A4381 /* sm2_test_param.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		13719E5C1FA18232001A4381 /* xy_ecpoint.c in Sources */ = {isa = PBXBuildFile; fileRef = 13719E511FA18231001A4381 /* xy_ecpoint.c */; settings = {COMPILER_FLAGS = "-w"; }; };
+		139BEFF71FCBF2DE0005F51E /* libGuomi_device.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139BEFF51FCBF2DE0005F51E /* libGuomi_device.a */; };
+		139BEFFA1FCBF3A70005F51E /* libGuomi_simulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139BEFF91FCBF3A70005F51E /* libGuomi_simulator.a */; };
 		13B59F061FA392FE00DCCD9C /* SM4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B59F051FA392FE00DCCD9C /* SM4ViewController.swift */; };
 		13B59F081FA393F600DCCD9C /* CharacterConversionToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B59F071FA393F600DCCD9C /* CharacterConversionToolViewController.swift */; };
 		13B59F0A1FA4AF6000DCCD9C /* SMMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B59F091FA4AF6000DCCD9C /* SMMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		134FD0A21FA1B9900006EE5F /* GuomiInterface.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = GuomiInterface.c; sourceTree = "<group>"; };
-		134FD0A31FA1B9900006EE5F /* GuomiInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuomiInterface.h; sourceTree = "<group>"; };
 		134FD0A51FA2A6D20006EE5F /* SM2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SM2ViewController.swift; sourceTree = "<group>"; };
 		134FD0A71FA2FD310006EE5F /* CString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CString.swift; sourceTree = "<group>"; };
-		134FD0C51FA3247B0006EE5F /* sm4test.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sm4test.c; sourceTree = "<group>"; };
-		134FD0C71FA3247C0006EE5F /* sm4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sm4.h; sourceTree = "<group>"; };
-		134FD0C81FA3247C0006EE5F /* sm4.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sm4.c; sourceTree = "<group>"; };
 		135AB3281FA1558900647374 /* GuomiDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuomiDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		135AB32B1FA1558900647374 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		135AB32D1FA1558900647374 /* SM3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SM3ViewController.swift; sourceTree = "<group>"; };
@@ -50,32 +31,9 @@
 		135AB3321FA1558900647374 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		135AB3351FA1558900647374 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		135AB3371FA1558900647374 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		135AB3411FA1562400647374 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = lib/libssl.a; sourceTree = "<group>"; };
-		135AB3421FA1562400647374 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = lib/libcrypto.a; sourceTree = "<group>"; };
 		135AB3451FA156D700647374 /* GuomiDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GuomiDemo-Bridging-Header.h"; sourceTree = "<group>"; };
-		13719E3B1FA1822D001A4381 /* part1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = part1.h; sourceTree = "<group>"; };
-		13719E3C1FA1822D001A4381 /* sm3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sm3.h; sourceTree = "<group>"; };
-		13719E3D1FA1822E001A4381 /* part3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = part3.c; sourceTree = "<group>"; };
-		13719E3E1FA1822E001A4381 /* part2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = part2.h; sourceTree = "<group>"; };
-		13719E3F1FA1822E001A4381 /* util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = util.c; sourceTree = "<group>"; };
-		13719E401FA1822E001A4381 /* part1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = part1.c; sourceTree = "<group>"; };
-		13719E411FA1822E001A4381 /* ec_param.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ec_param.h; sourceTree = "<group>"; };
-		13719E421FA1822E001A4381 /* part2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = part2.c; sourceTree = "<group>"; };
-		13719E431FA1822F001A4381 /* part3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = part3.h; sourceTree = "<group>"; };
-		13719E441FA1822F001A4381 /* xy_ecpoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xy_ecpoint.h; sourceTree = "<group>"; };
-		13719E451FA1822F001A4381 /* sm2_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sm2_common.h; sourceTree = "<group>"; };
-		13719E461FA1822F001A4381 /* part4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = part4.h; sourceTree = "<group>"; };
-		13719E471FA18230001A4381 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
-		13719E481FA18230001A4381 /* sm3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sm3.c; sourceTree = "<group>"; };
-		13719E491FA18230001A4381 /* sm2_ec_key.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sm2_ec_key.c; sourceTree = "<group>"; };
-		13719E4A1FA18230001A4381 /* sm2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sm2.c; sourceTree = "<group>"; };
-		13719E4B1FA18230001A4381 /* part4.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = part4.c; sourceTree = "<group>"; };
-		13719E4C1FA18231001A4381 /* sm2_ec_key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sm2_ec_key.h; sourceTree = "<group>"; };
-		13719E4D1FA18231001A4381 /* ec_param.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ec_param.c; sourceTree = "<group>"; };
-		13719E4E1FA18231001A4381 /* sm2_test_param.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sm2_test_param.c; sourceTree = "<group>"; };
-		13719E4F1FA18231001A4381 /* sm2_test_param.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sm2_test_param.h; sourceTree = "<group>"; };
-		13719E501FA18231001A4381 /* sm2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sm2.h; sourceTree = "<group>"; };
-		13719E511FA18231001A4381 /* xy_ecpoint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = xy_ecpoint.c; sourceTree = "<group>"; };
+		139BEFF51FCBF2DE0005F51E /* libGuomi_device.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGuomi_device.a; path = lib/libGuomi_device.a; sourceTree = "<group>"; };
+		139BEFF91FCBF3A70005F51E /* libGuomi_simulator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGuomi_simulator.a; path = lib/libGuomi_simulator.a; sourceTree = "<group>"; };
 		13B59F051FA392FE00DCCD9C /* SM4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SM4ViewController.swift; sourceTree = "<group>"; };
 		13B59F071FA393F600DCCD9C /* CharacterConversionToolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterConversionToolViewController.swift; sourceTree = "<group>"; };
 		13B59F091FA4AF6000DCCD9C /* SMMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMMenuViewController.swift; sourceTree = "<group>"; };
@@ -86,8 +44,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				135AB3441FA1562400647374 /* libcrypto.a in Frameworks */,
-				135AB3431FA1562400647374 /* libssl.a in Frameworks */,
+				139BEFFA1FCBF3A70005F51E /* libGuomi_simulator.a in Frameworks */,
+				139BEFF71FCBF2DE0005F51E /* libGuomi_device.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +56,6 @@
 			isa = PBXGroup;
 			children = (
 				135AB32A1FA1558900647374 /* GuomiDemo */,
-				13719E5E1FA1B1D7001A4381 /* sm */,
 				135AB3401FA155FB00647374 /* Frameworks */,
 				135AB3291FA1558900647374 /* Products */,
 			);
@@ -142,45 +99,10 @@
 		135AB3401FA155FB00647374 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				135AB3421FA1562400647374 /* libcrypto.a */,
-				135AB3411FA1562400647374 /* libssl.a */,
+				139BEFF91FCBF3A70005F51E /* libGuomi_simulator.a */,
+				139BEFF51FCBF2DE0005F51E /* libGuomi_device.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		13719E5E1FA1B1D7001A4381 /* sm */ = {
-			isa = PBXGroup;
-			children = (
-				134FD0A31FA1B9900006EE5F /* GuomiInterface.h */,
-				134FD0A21FA1B9900006EE5F /* GuomiInterface.c */,
-				13719E4D1FA18231001A4381 /* ec_param.c */,
-				13719E411FA1822E001A4381 /* ec_param.h */,
-				13719E401FA1822E001A4381 /* part1.c */,
-				13719E3B1FA1822D001A4381 /* part1.h */,
-				13719E421FA1822E001A4381 /* part2.c */,
-				13719E3E1FA1822E001A4381 /* part2.h */,
-				13719E3D1FA1822E001A4381 /* part3.c */,
-				13719E431FA1822F001A4381 /* part3.h */,
-				13719E4B1FA18230001A4381 /* part4.c */,
-				13719E461FA1822F001A4381 /* part4.h */,
-				13719E451FA1822F001A4381 /* sm2_common.h */,
-				13719E491FA18230001A4381 /* sm2_ec_key.c */,
-				13719E4C1FA18231001A4381 /* sm2_ec_key.h */,
-				13719E4E1FA18231001A4381 /* sm2_test_param.c */,
-				13719E4F1FA18231001A4381 /* sm2_test_param.h */,
-				13719E4A1FA18230001A4381 /* sm2.c */,
-				13719E501FA18231001A4381 /* sm2.h */,
-				13719E481FA18230001A4381 /* sm3.c */,
-				13719E3C1FA1822D001A4381 /* sm3.h */,
-				134FD0C81FA3247C0006EE5F /* sm4.c */,
-				134FD0C71FA3247C0006EE5F /* sm4.h */,
-				134FD0C51FA3247B0006EE5F /* sm4test.c */,
-				13719E3F1FA1822E001A4381 /* util.c */,
-				13719E471FA18230001A4381 /* util.h */,
-				13719E511FA18231001A4381 /* xy_ecpoint.c */,
-				13719E441FA1822F001A4381 /* xy_ecpoint.h */,
-			);
-			path = sm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,26 +177,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13719E571FA18232001A4381 /* sm2_ec_key.c in Sources */,
 				13B59F061FA392FE00DCCD9C /* SM4ViewController.swift in Sources */,
-				13719E541FA18232001A4381 /* part1.c in Sources */,
 				134FD0A81FA2FD310006EE5F /* CString.swift in Sources */,
-				13719E561FA18232001A4381 /* sm3.c in Sources */,
-				13719E5B1FA18232001A4381 /* sm2_test_param.c in Sources */,
 				13B59F081FA393F600DCCD9C /* CharacterConversionToolViewController.swift in Sources */,
-				13719E531FA18232001A4381 /* util.c in Sources */,
-				13719E581FA18232001A4381 /* sm2.c in Sources */,
-				13719E591FA18232001A4381 /* part4.c in Sources */,
-				13719E551FA18232001A4381 /* part2.c in Sources */,
-				134FD0C91FA3247C0006EE5F /* sm4test.c in Sources */,
 				135AB32E1FA1558900647374 /* SM3ViewController.swift in Sources */,
-				134FD0A41FA1B9900006EE5F /* GuomiInterface.c in Sources */,
-				134FD0CB1FA3247C0006EE5F /* sm4.c in Sources */,
-				13719E521FA18232001A4381 /* part3.c in Sources */,
 				135AB32C1FA1558900647374 /* AppDelegate.swift in Sources */,
 				13B59F0A1FA4AF6000DCCD9C /* SMMenuViewController.swift in Sources */,
-				13719E5A1FA18232001A4381 /* ec_param.c in Sources */,
-				13719E5C1FA18232001A4381 /* xy_ecpoint.c in Sources */,
 				134FD0A61FA2A6D20006EE5F /* SM2ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,11 +324,13 @@
 				DEVELOPMENT_TEAM = T5S9EB867D;
 				HEADER_SEARCH_PATHS = "include/**";
 				INFOPLIST_FILE = GuomiDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gouchicao.GuomiDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "GuomiDemo/GuomiDemo-Bridging-Header.h";
@@ -437,11 +347,13 @@
 				DEVELOPMENT_TEAM = T5S9EB867D;
 				HEADER_SEARCH_PATHS = "include/**";
 				INFOPLIST_FILE = GuomiDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gouchicao.GuomiDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "GuomiDemo/GuomiDemo-Bridging-Header.h";
