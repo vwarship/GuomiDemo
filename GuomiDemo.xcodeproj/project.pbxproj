@@ -14,8 +14,7 @@
 		135AB3311FA1558900647374 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 135AB32F1FA1558900647374 /* Main.storyboard */; };
 		135AB3331FA1558900647374 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 135AB3321FA1558900647374 /* Assets.xcassets */; };
 		135AB3361FA1558900647374 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 135AB3341FA1558900647374 /* LaunchScreen.storyboard */; };
-		139BEFF71FCBF2DE0005F51E /* libGuomi_device.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139BEFF51FCBF2DE0005F51E /* libGuomi_device.a */; };
-		139BEFFA1FCBF3A70005F51E /* libGuomi_simulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139BEFF91FCBF3A70005F51E /* libGuomi_simulator.a */; };
+		139BEFFD1FCFA9F70005F51E /* libGuomi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139BEFFC1FCFA9F70005F51E /* libGuomi.a */; };
 		13B59F061FA392FE00DCCD9C /* SM4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B59F051FA392FE00DCCD9C /* SM4ViewController.swift */; };
 		13B59F081FA393F600DCCD9C /* CharacterConversionToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B59F071FA393F600DCCD9C /* CharacterConversionToolViewController.swift */; };
 		13B59F0A1FA4AF6000DCCD9C /* SMMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B59F091FA4AF6000DCCD9C /* SMMenuViewController.swift */; };
@@ -32,8 +31,7 @@
 		135AB3351FA1558900647374 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		135AB3371FA1558900647374 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		135AB3451FA156D700647374 /* GuomiDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GuomiDemo-Bridging-Header.h"; sourceTree = "<group>"; };
-		139BEFF51FCBF2DE0005F51E /* libGuomi_device.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGuomi_device.a; path = lib/libGuomi_device.a; sourceTree = "<group>"; };
-		139BEFF91FCBF3A70005F51E /* libGuomi_simulator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGuomi_simulator.a; path = lib/libGuomi_simulator.a; sourceTree = "<group>"; };
+		139BEFFC1FCFA9F70005F51E /* libGuomi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGuomi.a; path = lib/libGuomi.a; sourceTree = "<group>"; };
 		13B59F051FA392FE00DCCD9C /* SM4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SM4ViewController.swift; sourceTree = "<group>"; };
 		13B59F071FA393F600DCCD9C /* CharacterConversionToolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterConversionToolViewController.swift; sourceTree = "<group>"; };
 		13B59F091FA4AF6000DCCD9C /* SMMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMMenuViewController.swift; sourceTree = "<group>"; };
@@ -44,8 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				139BEFFA1FCBF3A70005F51E /* libGuomi_simulator.a in Frameworks */,
-				139BEFF71FCBF2DE0005F51E /* libGuomi_device.a in Frameworks */,
+				139BEFFD1FCFA9F70005F51E /* libGuomi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,8 +96,7 @@
 		135AB3401FA155FB00647374 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				139BEFF91FCBF3A70005F51E /* libGuomi_simulator.a */,
-				139BEFF51FCBF2DE0005F51E /* libGuomi_device.a */,
+				139BEFFC1FCFA9F70005F51E /* libGuomi.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
